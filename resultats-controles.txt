@@ -1,69 +1,14 @@
-# Exécution complète — 2026-10-15T14:35:14+02:00 — Python 3.14.8
+# Exécution complète — 2026-10-15T14:35:31+02:00 — Python 3.14.8
 $ pre-commit run --all-files
-trim trailing whitespace.................................................Failed
-- hook id: trailing-whitespace
-- files were modified by this hook
-fix end of files.........................................................Failed
-- hook id: end-of-file-fixer
-- exit code: 1
-- files were modified by this hook
-
-Fixing resultats-controles.txt
-
-check for added large files..............................................Failed
-- hook id: check-added-large-files
-- files were modified by this hook
-check yaml...............................................................Failed
-- hook id: check-yaml
-- files were modified by this hook
-bandit...................................................................Failed
-- hook id: bandit
-- files were modified by this hook
-
-[main]	INFO	profile include tests: None
-[main]	INFO	profile exclude tests: None
-[main]	INFO	cli include tests: None
-[main]	INFO	cli exclude tests: None
-[main]	INFO	running on Python 3.14.8
-Run started:2026-10-15 12:35:15.048123+00:00
-
-Test results:
-	No issues identified.
-
-Code scanned:
-	Total lines of code: 46
-	Total lines skipped (#nosec): 0
-	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
-
-Run metrics:
-	Total issues (by severity):
-		Undefined: 0
-		Low: 5
-		Medium: 0
-		High: 0
-	Total issues (by confidence):
-		Undefined: 0
-		Low: 0
-		Medium: 0
-		High: 5
-Files skipped (0):
-
-Detect secrets...........................................................Failed
-- hook id: detect-secrets
-- files were modified by this hook
-Tests unitaires..........................................................Failed
-- hook id: pytest
-- files were modified by this hook
-
-.........                                                                [100%]
-9 passed in 0.01s
-
-Audit des dépendances Python.............................................Failed
-- hook id: pip-audit
-- files were modified by this hook
-
-No known vulnerabilities found
-
+trim trailing whitespace.................................................Passed
+fix end of files.........................................................Passed
+check for added large files..............................................Passed
+check yaml...............................................................Passed
+bandit...................................................................Passed
+Detect secrets...........................................................Passed
+Tests unitaires..........................................................Passed
+Audit des dépendances Python.............................................Passed
+(code retour : 0)
 
 $ pytest -q
 .........                                                                [100%]
