@@ -63,9 +63,15 @@ donne le code actuel de `app.py`.
   vide versionné, lecture par `get_password()` qui échoue explicitement si la
   variable est absente et n'affiche jamais la valeur.
 - **Le baseline n'a pas été utilisé pour masquer ce résultat**. Il a été régénéré
-  *après* correction et ne contient aucune entrée. La seule exception est un
-  `pragma: allowlist secret` sur une valeur de test fictive dans `test_app.py`,
-  visible en revue de code.
+  *après* correction et ne contient aucune entrée pour le code (`app.py`,
+  `test_app.py`). La valeur de test fictive de `test_app.py` porte un
+  `pragma: allowlist secret`, visible en revue de code.
+- **Exceptions tracées dans le baseline.** Le baseline contient 2 entrées,
+  toutes deux dans `RAPPORT.md` (§1 et §3) : la citation du code initial
+  du TP et la fausse clé AWS du scénario de test. Elles ont été examinées puis
+  marquées `is_secret: false` (faux positifs audités, cf. commit `d6e54ac`).
+  C'est le traitement traçable prévu au §4.1 : l'exception est versionnée,
+  visible en revue et vérifiable avec `detect-secrets audit --report .secrets.baseline`.
 
 ### Problème 3 — Faux négatif silencieux : Bandit 1.8.6 incompatible avec Python 3.14
 - **Constat** : avec la version épinglée dans l'énoncé (`rev: 1.8.6`), le hook

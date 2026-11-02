@@ -30,6 +30,12 @@ le développeur peut commiter, mais la CI reste bloquante.
   approbation de revue au minimum. Les administrateurs ne sont pas exemptés.
 - Le contournement local (`--no-verify`, `core.hooksPath`) est techniquement
   possible. C'est pour cette raison que la CI fait foi.
+- **pre-commit.ci** (option, dépôts GitHub) : exécute les hooks sur chaque
+  pull request, applique les corrections automatiques et propose les mises à
+  jour des versions (`autoupdate`). Il complète la CI mais ne remplace ni la
+  protection de branche, ni les tests applicatifs, ni la politique de gestion
+  des vulnérabilités. Les hooks `language: system` (pytest, pip-audit) n'y
+  tournent pas : ils restent dans le job CI du dépôt.
 
 ## 4. Traitement des faux positifs et exceptions
 
